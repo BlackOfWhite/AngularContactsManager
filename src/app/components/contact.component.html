@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+        <h1>Contacts:</h1>
+        <table class="table table-striped">
+            <tr>
+                <th>Full Name</th>
+                <th>Company</th>
+                <th>Email</th>
+                <th>Phone number</th>
+                <th>Remove</th>
+            </tr>
+            <tr *ngFor="let c of contacts; let id = index">
+                <td>{{c.firstName}} {{c.lastName}}</td>
+                <td>{{c.companyName}}
+                    <td>{{c.email}}</td>
+                    <td>{{c.phone}}</td>
+                    <td><button (click)="deleteContact(c.cId)">X</button></td>
+            </tr>
+        </table>
+    </div>
+</div>

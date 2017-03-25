@@ -1,0 +1,55 @@
+<div class="col-md-6 col-md-offset-3">
+    <div class="navbar-dark">
+        <h1>
+            Welcome user: {{email}}
+        </h1>
+
+        <button (click)="toggleHobbies()">{{showHobbies ? "Hide hobbies" : "Show hobbies"}}</button>
+        <div *ngIf="showHobbies">
+            Your Hobbies:
+            <ul>
+                <li *ngFor="let hobby of hobbies; let id = index" class="dropdown-item">This is also hobby: {{hobby}}
+                    <button (click)="deleteHobby(id)">Remove</button>
+                </li>
+            </ul>
+            <form (submit)="addHobby(hobby.value)">
+                <label>Add New Hobby: </label>
+                <input type="text" #hobby/><br>
+            </form>
+        </div>
+
+        <form>
+            <label>City: </label>
+            <input type="text" name="address.city" [(ngModel)]="address.city" /><br>
+            <label>Street: </label>
+            <input type="text" name="address.route" [(ngModel)]="address.route" /><br>
+            <label>Flat: </label>
+            <input type="text" name="address.flat" [(ngModel)]="address.flat" /><br>
+        </form>
+
+        <div *ngFor="let c of posts;">
+            <h3>{{c.firstName}} {{c.lastName}}</h3>
+            <p>Hired at: {{c.companyName}}</p>
+            <p>Email: {{email}}</p>
+        </div>
+    </div>
+
+    <div class="btn-group" dropdown>
+        <button id="single-button" type="button" class="btn btn-primary" dropdownToggle>
+    Button dropdown <span class="caret"></span>
+  </button>
+        <ul dropdownMenu role="menu" aria-labelledby="single-button">
+            <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+            <li class="divider dropdown-divider"></li>
+            <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <button id="single-button2" type="button" class="btn btn-warning">
+    Button dropdown <span class="caret"></span>
+  </button>
+    </div>
+</div>

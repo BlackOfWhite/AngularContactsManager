@@ -1,0 +1,27 @@
+<div class="col-md-6 col-md-offset-3">
+    <div class="navbar-dark">
+        <h1>
+            Welcome back user: {{username}}
+        </h1>
+
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-md-6 col-md-offset-3">
+        <h1>Users:</h1>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Full Name</th>
+                <th>Email</th>
+            </tr>
+            <tr *ngFor="let u of users; let id = index">
+                <td>{{u.userId}}</td>
+                <td>{{u.firstName}} {{u.lastName}}</td>
+                <td>{{u.email}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
